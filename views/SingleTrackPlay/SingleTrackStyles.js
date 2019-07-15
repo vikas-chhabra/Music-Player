@@ -15,7 +15,8 @@ export default StyleSheet.create({
         height:height+statusBarHeight,
     },
     statusBarHeightDown:{
-        height: statusBarHeight
+        height: statusBarHeight,
+        backgroundColor:'rgba(255,255,255,1)'
     },
     playlistDetails:{
         flex:0.8, 
@@ -101,5 +102,8 @@ export default StyleSheet.create({
         width:width/2.6,
         height:width/2.6,
         marginLeft:width/4.4
+    },
+    IconsCss:{
+        padding:10, 
     }
 })

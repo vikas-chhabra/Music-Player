@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Slider, Image, Animated, Dimensions, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native'
+import { Text, View, Slider, Image, Animated, Dimensions, TouchableOpacity, StatusBar, TouchableNativeFeedback, Platform,  } from 'react-native'
 import  Styles  from './SingleTrackStyles'
 import AntDesign from '@expo/vector-icons/AntDesign'
 import Feather from '@expo/vector-icons/Feather'
@@ -23,7 +23,7 @@ export default class SingleTrackPlay extends Component {
         return (
             // container started
             <View style={[Styles.container]}>
-
+                <StatusBar barStyle="light-content" translucent={false} backgroundColor="rgba(255,255,255,1)"/>
                 {/* status bar height view  started */}
                 <View style={[Styles.statusBarHeightDown]}/>
                 {/* status bar height view ended */}
@@ -47,16 +47,16 @@ export default class SingleTrackPlay extends Component {
 
                 {/* icons view started */}
                 <View style={[Styles.iconsView]}>
-                    <TouchableOpacity style={{padding:10, paddingLeft:0}}>
+                    <TouchableOpacity style={[Styles.icon]}>
                         <AntDesign name = "check" color="#aeaeae" size={22}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{padding:10, paddingLeft:0}}>
+                    <TouchableOpacity style={[Styles.icon]}>
                         <Feather name = "shuffle" color="#aeaeae" size={22}/>   
                     </TouchableOpacity>
-                    <TouchableOpacity style={{padding:10, paddingLeft:0}}>
+                    <TouchableOpacity style={[Styles.icon]}>
                         <Feather name = "repeat" color="#aeaeae" size={22}/> 
                     </TouchableOpacity>
-                    <TouchableOpacity style={{padding:10, paddingLeft:0}}>
+                    <TouchableOpacity style={[Styles.icon]}>
                         <MaterialIcons name = "dots-horizontal" color="#aeaeae" size={22}/> 
                     </TouchableOpacity>
                 </View>
@@ -71,9 +71,16 @@ export default class SingleTrackPlay extends Component {
 
                 {/* play pause button view started */}
                 <View style={[Styles.playPauseButtons]}>
-                    <MaterialIcons name = "skip-previous" color='#fff' size={35}/>
-                    <MaterialIcons name = "pause" color="#fff" size={35}/>  
-                    <MaterialIcons name = "skip-next" color='#fff' size={35}/>
+                    <TouchableOpacity style={[Styles.IconsCss]}>
+                        <MaterialIcons name = "skip-previous" color='#fff' size={35}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[Styles.IconsCss]}>
+                        <MaterialIcons name = "pause" color="#fff" size={35}/>  
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[Styles.IconsCss]}>
+                        <MaterialIcons name = "skip-next" color='#fff' size={35}/>
+                    </TouchableOpacity>
+
                 </View>
                 {/* play pause button view ended */}
 
@@ -91,7 +98,7 @@ export default class SingleTrackPlay extends Component {
 
                 {/* progress view started */}
                 <View style={[Styles.ProgressView]}>
-                    <Slider style={[Styles.slider]} thumbTintColor='blue' maximumTrackTintColor='-lightblue' minimumTrackTintColor='blue' onValueChange={(value)=>{this.state.sliderValue.setValue(value)}}/>
+                    <Slider style={[Styles.slider]} thumbTintColor='blue' maximumTrackTintColor='lightblue' minimumTrackTintColor='blue' onValueChange={(value)=>{this.state.sliderValue.setValue(value)}}/>
                 </View>
                 {/* progress view ended */}
                 </View>
