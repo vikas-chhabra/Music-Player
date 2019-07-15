@@ -23,7 +23,7 @@ export default class SingleTrackPlay extends Component {
         return (
             // container started
             <View style={[Styles.container]}>
-                <StatusBar barStyle="light-content" translucent={false} backgroundColor="rgba(255,255,255,1)"/>
+                <StatusBar barStyle="dark-content" translucent={true} style={{ backgroundColor:"rgba(255,255,255,1)"}}/>
                 {/* status bar height view  started */}
                 <View style={[Styles.statusBarHeightDown]}/>
                 {/* status bar height view ended */}
